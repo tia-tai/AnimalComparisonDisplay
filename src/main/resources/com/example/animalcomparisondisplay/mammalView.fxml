@@ -1,16 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.animalcomparisondisplay.animalController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Mammal">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="373.0" prefWidth="600.0">
+                           <children>
+                              <TableView prefHeight="200.0" prefWidth="200.0">
+                                <columns>
+                                  <TableColumn prefWidth="75.0" text="Rank" />
+                                  <TableColumn prefWidth="161.0" text="Name" />
+                                    <TableColumn prefWidth="121.0" text="AVG Mass (Tonnes)" />
+                                    <TableColumn prefWidth="116.0" text="Max Mass (Tonnes)" />
+                                    <TableColumn prefWidth="126.0" text="AVG Length (Feet)" />
+                                </columns>
+                              </TableView>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <TextField layoutX="67.0" layoutY="14.0" />
+                                    <Text layoutX="29.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rank" />
+                                    <Text layoutX="32.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                                    <Text layoutX="27.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avg Mass" />
+                                    <Text layoutX="26.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max Mass" />
+                                    <Text layoutX="22.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avg Length" />
+                                    <TextField layoutX="76.0" layoutY="41.0" />
+                                    <TextField layoutX="88.0" layoutY="74.0" />
+                                    <TextField layoutX="97.0" layoutY="107.0" />
+                                    <TextField layoutX="86.0" layoutY="143.0" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Fish">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="294.0" prefWidth="529.0" />
+            </content>
+          </Tab>
+            <Tab text="Bird">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</Pane>
