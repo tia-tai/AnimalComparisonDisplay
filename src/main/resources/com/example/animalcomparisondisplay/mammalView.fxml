@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
@@ -10,18 +12,17 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #8b8b8b;" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Mammal">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #8b8b8b;">
                      <children>
                         <VBox prefHeight="373.0" prefWidth="600.0">
                            <children>
-                              <TableView prefHeight="200.0" prefWidth="200.0">
+                              <TableView prefHeight="409.0" prefWidth="600.0" style="-fx-background-color: #575757;">
                                 <columns>
                                   <TableColumn prefWidth="75.0" text="Rank" />
                                   <TableColumn prefWidth="161.0" text="Name" />
@@ -30,18 +31,36 @@
                                     <TableColumn prefWidth="126.0" text="AVG Length (Feet)" />
                                 </columns>
                               </TableView>
-                              <Pane prefHeight="200.0" prefWidth="200.0">
+                              <Pane prefHeight="407.0" prefWidth="600.0" style="-fx-background-color: #3f3f3f;">
                                  <children>
-                                    <TextField layoutX="67.0" layoutY="14.0" />
-                                    <Text layoutX="29.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rank" />
-                                    <Text layoutX="32.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-                                    <Text layoutX="27.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avg Mass" />
-                                    <Text layoutX="26.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max Mass" />
-                                    <Text layoutX="22.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avg Length" />
-                                    <TextField layoutX="76.0" layoutY="41.0" />
-                                    <TextField layoutX="88.0" layoutY="74.0" />
-                                    <TextField layoutX="97.0" layoutY="107.0" />
-                                    <TextField layoutX="86.0" layoutY="143.0" />
+                                    <TextField layoutX="95.0" layoutY="12.0" promptText="New Rank" style="-fx-background-color: #616660;" />
+                                    <Text fill="WHITE" layoutX="23.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rank:" />
+                                    <Text fill="WHITE" layoutX="20.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
+                                    <Text fill="WHITE" layoutX="17.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avg Mass:" />
+                                    <Text fill="WHITE" layoutX="17.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max Mass:" />
+                                    <Text fill="WHITE" layoutX="15.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avg Length:" />
+                                    <TextField layoutX="95.0" layoutY="43.0" promptText="New Name" style="-fx-background-color: #616660;" />
+                                    <TextField layoutX="95.0" layoutY="74.0" promptText="New Average Mass" style="-fx-background-color: #616660;" />
+                                    <TextField layoutX="95.0" layoutY="107.0" promptText="New Avg Length" style="-fx-background-color: #616660;" />
+                                    <TextField layoutX="95.0" layoutY="143.0" promptText="New Max Mass" style="-fx-background-color: #616660;" />
+                                    <Button layoutX="545.0" layoutY="12.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="23.0" style="-fx-background-color: transparent;" text="X" textFill="WHITE">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button layoutX="515.0" layoutY="143.0" mnemonicParsing="false" style="-fx-background-color: #a0f583;" text="Update" />
+                                    <Button layoutX="432.0" layoutY="143.0" mnemonicParsing="false" style="-fx-background-color: #92b2e5;" text="Compare" />
+                                    <TextField disable="true" layoutX="382.0" layoutY="13.0" promptText="New Rank" style="-fx-background-color: #616660;" visible="false" />
+                                    <Text disable="true" fill="WHITE" layoutX="310.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rank:" visible="false" />
+                                    <Text disable="true" fill="WHITE" layoutX="307.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" visible="false" />
+                                    <Text disable="true" fill="WHITE" layoutX="304.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avg Mass:" visible="false" />
+                                    <Text disable="true" fill="WHITE" layoutX="304.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max Mass:" visible="false" />
+                                    <Text disable="true" fill="WHITE" layoutX="302.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avg Length:" visible="false" />
+                                    <TextField disable="true" layoutX="382.0" layoutY="44.0" promptText="New Name" style="-fx-background-color: #616660;" visible="false" />
+                                    <TextField disable="true" layoutX="382.0" layoutY="75.0" promptText="New Average Mass" style="-fx-background-color: #616660;" visible="false" />
+                                    <TextField disable="true" layoutX="382.0" layoutY="108.0" promptText="New Avg Length" style="-fx-background-color: #616660;" visible="false" />
+                                    <TextField disable="true" layoutX="382.0" layoutY="144.0" promptText="New Max Mass" style="-fx-background-color: #616660;" visible="false" />
+                                    <Text disable="true" fill="#47d5a6" layoutX="228.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item Updated Successfully" visible="false" />
                                  </children>
                               </Pane>
                            </children>
