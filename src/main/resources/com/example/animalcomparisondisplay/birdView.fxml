@@ -1,14 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.animalcomparisondisplay.animalController"
-            prefHeight="400.0" prefWidth="600.0">
 
-</AnchorPane>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TabPane prefHeight="200.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Mammals ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+          <Tab text="Fish" />
+            <Tab text="Birds ">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="310.0" prefWidth="600.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0" />
+                        <TableView layoutX="-2.0" layoutY="1.0" prefHeight="262.0" prefWidth="600.0">
+                          <columns>
+                            <TableColumn prefWidth="47.0" text="Rank" />
+                            <TableColumn prefWidth="64.0" text="Name " />
+                              <TableColumn prefWidth="70.0" text="Wingspan" />
+                              <TableColumn prefWidth="58.0" text="Weight" />
+                              <TableColumn prefWidth="93.0" text="Body Length" />
+                              <TableColumn prefWidth="123.0" text="Conservation status" />
+                              <TableColumn prefWidth="138.0" text="Scientific Name" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Pane layoutX="-14.0" layoutY="200.0" prefHeight="200.0" prefWidth="600.0">
+         <children>
+            <TextField layoutX="127.0" layoutY="8.0" />
+            <TextField layoutX="127.0" layoutY="39.0" />
+            <TextField layoutX="127.0" layoutY="72.0" />
+            <TextField layoutX="127.0" layoutY="106.0" />
+            <TextField layoutX="127.0" layoutY="137.0" />
+            <TextField layoutX="127.0" layoutY="169.0" />
+         </children>
+      </Pane>
+   </children>
+</Pane>
