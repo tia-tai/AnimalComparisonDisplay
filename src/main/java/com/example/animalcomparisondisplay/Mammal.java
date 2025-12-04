@@ -25,7 +25,7 @@ public class Mammal extends Animals {
         Mammal.mammals = mammals;
     }
 
-    public long getAvgMass() {
+    public int getAvgMass() {
         return avgMass;
     }
 
@@ -38,7 +38,7 @@ public class Mammal extends Animals {
     }
 
     public static void readMammalData() throws Exception {
-        File dataFile = new File("MammalData");
+        File dataFile = new File("src/main/MammalData");
         Scanner fileScanner = new Scanner(dataFile);
         while (fileScanner.hasNextLine()) {
             String data = fileScanner.nextLine();

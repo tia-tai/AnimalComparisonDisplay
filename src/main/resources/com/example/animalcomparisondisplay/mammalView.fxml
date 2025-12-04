@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.animalcomparisondisplay.Mammal">
    <children>
       <TabPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #8b8b8b;" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -22,13 +22,13 @@
                      <children>
                         <VBox prefHeight="373.0" prefWidth="600.0">
                            <children>
-                              <TableView prefHeight="409.0" prefWidth="600.0" style="-fx-background-color: #575757;">
+                              <TableView fx:id="mammalDatatable" prefHeight="409.0" prefWidth="600.0" style="-fx-background-color: #575757;">
                                 <columns>
-                                  <TableColumn prefWidth="75.0" text="Rank" />
-                                  <TableColumn prefWidth="161.0" text="Name" />
-                                    <TableColumn prefWidth="121.0" text="AVG Mass (Tonnes)" />
-                                    <TableColumn prefWidth="116.0" text="Max Mass (Tonnes)" />
-                                    <TableColumn prefWidth="126.0" text="AVG Length (Feet)" />
+                                  <TableColumn fx:id="tableRank" prefWidth="75.0" text="Rank" />
+                                  <TableColumn fx:id="nameRank" prefWidth="161.0" text="Name" />
+                                    <TableColumn fx:id="avgMassTable" prefWidth="121.0" text="AVG Mass (Tonnes)" />
+                                    <TableColumn fx:id="maxMassTable" prefWidth="116.0" text="Max Mass (Tonnes)" />
+                                    <TableColumn fx:id="avgLengthTable" prefWidth="126.0" text="AVG Length (Feet)" />
                                 </columns>
                               </TableView>
                               <Pane prefHeight="407.0" prefWidth="600.0" style="-fx-background-color: #3f3f3f;">
@@ -41,7 +41,7 @@
                                     <Text fill="WHITE" layoutX="15.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avg Length:" />
                                     <TextField layoutX="95.0" layoutY="43.0" promptText="New Name" style="-fx-background-color: #616660;" />
                                     <TextField layoutX="95.0" layoutY="74.0" promptText="New Average Mass" style="-fx-background-color: #616660;" />
-                                    <TextField layoutX="95.0" layoutY="107.0" promptText="New Avg Length" style="-fx-background-color: #616660;" />
+                                    <TextField layoutX="95.0" layoutY="107.0" promptText="New Average Length" style="-fx-background-color: #616660;" />
                                     <TextField layoutX="95.0" layoutY="143.0" promptText="New Max Mass" style="-fx-background-color: #616660;" />
                                     <Button layoutX="545.0" layoutY="12.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="23.0" style="-fx-background-color: transparent;" text="X" textFill="WHITE">
                                        <cursor>
