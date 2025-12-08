@@ -5,8 +5,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-
-<Pane prefHeight="456.0" prefWidth="651.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.animalcomparisondisplay.mammalController">
+<Pane prefHeight="456.0" prefWidth="651.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TextField layoutX="99.0" layoutY="22.0" />
       <TextField layoutX="99.0" layoutY="150.0" />

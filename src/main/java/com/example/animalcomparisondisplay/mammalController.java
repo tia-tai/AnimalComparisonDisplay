@@ -1,9 +1,15 @@
 package com.example.animalcomparisondisplay;
 
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.application.Application;
+import javafx.event.Event;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+
+import java.util.Objects;
 
 public class mammalController {
     public TableView<Mammal> mammalDatatable;
@@ -19,6 +25,14 @@ public class mammalController {
     public TextField currentAvgMass;
     public TextField currentAvgLength;
     public TextField currentMaxMass;
+
+    public Button uploadButton;
+    public ImageView imageData;
+
+    public TabPane tabs;
+
+    public mammalController() throws Exception {
+    }
 
     public void initialize()  {
         try {
@@ -57,5 +71,22 @@ public class mammalController {
         currentAvgLength.setText(Float.toString(currentMammal.getLength()));
         currentAvgMass.setText(Integer.toString(currentMammal.getAvgMass()));
         currentMaxMass.setText(Integer.toString(currentMammal.getMaxMass()));
+    }
+
+    public void changeView(Event event) throws Exception {
+        System.out.println("NEVER GOT HERE");
+        Tab sourceButton = (Tab) event.getSource();
+        Stage stage = (Stage) tabs.getScene().getWindow();
+        if (Objects.equals(sourceButton.getText(), "Fish")) {
+            FXMLLoader fishLoader = new FXMLLoader(animalApplication.class.getResource("fishView.fxml"));
+            Scene fishScene = new Scene(fishLoader.load(), 320, 240);
+            stage.setScene(fishScene);
+            stage.show();
+        } else {
+            FXMLLoader birdLoader = new FXMLLoader(animalApplication.class.getResource("birdView.fxml"));
+            Scene birdScene = new Scene(birdLoader.load(), 320, 240);
+            stage.setScene(birdScene);
+            stage.show();
+        }
     }
 }

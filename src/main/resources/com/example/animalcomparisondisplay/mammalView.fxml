@@ -7,79 +7,125 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.animalcomparisondisplay.mammalController">
-   <children>
-      <TabPane style="-fx-background-color: #8b8b8b;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <tabs>
-          <Tab text="Mammal">
-            <content>
-              <AnchorPane style="-fx-background-color: #8b8b8b;">
-                     <children>
-                        <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <children>
-                              <TableView fx:id="mammalDatatable" onMouseClicked="#displayData" prefHeight="401.0" prefWidth="601.0" style="-fx-background-color: #575757;">
-                                <columns>
-                                  <TableColumn fx:id="rankTable" prefWidth="75.0" text="Rank" />
-                                  <TableColumn fx:id="nameTable" prefWidth="161.0" text="Name" />
-                                    <TableColumn fx:id="avgMassTable" prefWidth="121.0" text="AVG Mass (Pound)" />
-                                    <TableColumn fx:id="maxMassTable" prefWidth="116.0" text="Max Mass (Pound)" />
-                                    <TableColumn fx:id="avgLengthTable" prefWidth="126.0" text="AVG Length (Feet)" />
-                                </columns>
-                              </TableView>
-                              <AnchorPane>
-                                 <children>
-                                    <TextField fx:id="currentRank" layoutX="95.0" layoutY="12.0" promptText="New Rank" style="-fx-background-color: #616660;" AnchorPane.bottomAnchor="136.2578125132" />
-                                    <Text fill="WHITE" layoutX="23.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rank:" AnchorPane.bottomAnchor="136.2578125" AnchorPane.leftAnchor="23.0" />
-                                    <Text fill="WHITE" layoutX="20.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" AnchorPane.bottomAnchor="110.0" AnchorPane.leftAnchor="20.0" />
-                                    <Text fill="WHITE" layoutX="17.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avg Mass:" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="20.0" />
-                                    <Text fill="WHITE" layoutX="16.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max Mass:" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="20.0" />
-                                    <Text fill="WHITE" layoutX="16.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avg Length:" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="20.0" />
-                                    <TextField fx:id="currentName" layoutX="95.0" layoutY="43.0" promptText="New Name" style="-fx-background-color: #616660;" AnchorPane.bottomAnchor="110.0" />
-                                    <TextField fx:id="currentAvgMass" layoutX="95.0" layoutY="74.0" promptText="New Average Mass" style="-fx-background-color: #616660;" AnchorPane.bottomAnchor="74.0" />
-                                    <TextField fx:id="currentAvgLength" layoutX="96.0" layoutY="137.0" promptText="New Average Length" style="-fx-background-color: #616660;" AnchorPane.bottomAnchor="7.0" />
-                                    <TextField fx:id="currentMaxMass" layoutX="94.0" layoutY="107.0" promptText="New Max Mass" style="-fx-background-color: #616660;" AnchorPane.bottomAnchor="40.0" />
-                                    <Button layoutX="545.0" layoutY="12.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="23.0" style="-fx-background-color: transparent;" text="X" textFill="WHITE" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="12.0">
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </Button>
-                                    <Button layoutX="515.0" layoutY="143.0" mnemonicParsing="false" style="-fx-background-color: #a0f583;" text="Update" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="25.0" />
-                                    <Button layoutX="432.0" layoutY="143.0" mnemonicParsing="false" style="-fx-background-color: #92b2e5;" text="Compare" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="101.0" />
-                                    <TextField disable="true" layoutX="382.0" layoutY="13.0" promptText="New Rank" style="-fx-background-color: #616660;" visible="false" />
-                                    <Text disable="true" fill="WHITE" layoutX="310.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rank:" visible="false" />
-                                    <Text disable="true" fill="WHITE" layoutX="307.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" visible="false" />
-                                    <Text disable="true" fill="WHITE" layoutX="304.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avg Mass:" visible="false" />
-                                    <Text disable="true" fill="WHITE" layoutX="304.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max Mass:" visible="false" />
-                                    <Text disable="true" fill="WHITE" layoutX="302.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avg Length:" visible="false" />
-                                    <TextField disable="true" layoutX="382.0" layoutY="44.0" promptText="New Name" style="-fx-background-color: #616660;" visible="false" />
-                                    <TextField disable="true" layoutX="382.0" layoutY="75.0" promptText="New Average Mass" style="-fx-background-color: #616660;" visible="false" />
-                                    <TextField disable="true" layoutX="382.0" layoutY="108.0" promptText="New Avg Length" style="-fx-background-color: #616660;" visible="false" />
-                                    <TextField disable="true" layoutX="382.0" layoutY="144.0" promptText="New Max Mass" style="-fx-background-color: #616660;" visible="false" />
-                                    <Text disable="true" fill="#47d5a6" layoutX="228.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item Updated Successfully" visible="false" />
-                                 </children>
-                              </AnchorPane>
-                           </children>
-                        </VBox>
-                     </children>
-                  </AnchorPane>
-            </content>
-          </Tab>
-          <Tab text="Fish">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="294.0" prefWidth="529.0" />
-            </content>
-          </Tab>
-            <Tab text="Bird">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-               </content>
-            </Tab>
-        </tabs>
-      </TabPane>
-   </children>
+<AnchorPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.animalcomparisondisplay.mammalController">
+    <TabPane fx:id="tabs" style="-fx-background-color: #8b8b8b;" tabClosingPolicy="UNAVAILABLE"
+             AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+             AnchorPane.topAnchor="0.0">
+        <Tab onSelectionChanged="#changeView" text="Mammal">
+            <AnchorPane style="-fx-background-color: #8b8b8b;">
+                <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                      AnchorPane.topAnchor="0.0">
+                    <TableView fx:id="mammalDatatable" onMouseClicked="#displayData" prefHeight="401.0"
+                               prefWidth="601.0" style="-fx-background-color: #575757;">
+                        <columns>
+                            <TableColumn fx:id="rankTable" prefWidth="75.0" text="Rank"/>
+                            <TableColumn fx:id="nameTable" prefWidth="161.0" text="Name"/>
+                            <TableColumn fx:id="avgMassTable" prefWidth="121.0"
+                                         text="AVG Mass (Pound)"/>
+                            <TableColumn fx:id="maxMassTable" prefWidth="116.0"
+                                         text="Max Mass (Pound)"/>
+                            <TableColumn fx:id="avgLengthTable" prefWidth="126.0"
+                                         text="AVG Length (Feet)"/>
+                        </columns>
+                    </TableView>
+                    <AnchorPane>
+                        <TextField fx:id="currentRank" layoutX="95.0" layoutY="12.0"
+                                   promptText="New Rank"
+                                   style="-fx-background-color: #616660;"
+                                   AnchorPane.bottomAnchor="136.2578125132"/>
+                        <Text fill="WHITE" layoutX="23.0" layoutY="30.0" strokeType="OUTSIDE"
+                              strokeWidth="0.0" text="Rank:" AnchorPane.bottomAnchor="136.2578125"
+                              AnchorPane.leftAnchor="23.0"/>
+                        <Text fill="WHITE" layoutX="20.0" layoutY="60.0" strokeType="OUTSIDE"
+                              strokeWidth="0.0" text="Name:" AnchorPane.bottomAnchor="110.0"
+                              AnchorPane.leftAnchor="20.0"/>
+                        <Text fill="WHITE" layoutX="17.0" layoutY="91.0" strokeType="OUTSIDE"
+                              strokeWidth="0.0" text="Avg Mass:" AnchorPane.bottomAnchor="74.0"
+                              AnchorPane.leftAnchor="20.0"/>
+                        <Text fill="WHITE" layoutX="16.0" layoutY="125.0" strokeType="OUTSIDE"
+                              strokeWidth="0.0" text="Max Mass:" AnchorPane.bottomAnchor="40.0"
+                              AnchorPane.leftAnchor="20.0"/>
+                        <Text fill="WHITE" layoutX="16.0" layoutY="153.0" strokeType="OUTSIDE"
+                              strokeWidth="0.0" text="Avg Length:" AnchorPane.bottomAnchor="15.0"
+                              AnchorPane.leftAnchor="20.0"/>
+                        <TextField fx:id="currentName" layoutX="95.0" layoutY="43.0"
+                                   promptText="New Name"
+                                   style="-fx-background-color: #616660;"
+                                   AnchorPane.bottomAnchor="110.0"/>
+                        <TextField fx:id="currentAvgMass" layoutX="95.0" layoutY="74.0"
+                                   promptText="New Average Mass" style="-fx-background-color: #616660;"
+                                   AnchorPane.bottomAnchor="74.0"/>
+                        <TextField fx:id="currentAvgLength" layoutX="96.0" layoutY="137.0"
+                                   promptText="New Average Length"
+                                   style="-fx-background-color: #616660;"
+                                   AnchorPane.bottomAnchor="7.0"/>
+                        <TextField fx:id="currentMaxMass" layoutX="94.0" layoutY="107.0"
+                                   promptText="New Max Mass" style="-fx-background-color: #616660;"
+                                   AnchorPane.bottomAnchor="40.0"/>
+                        <Button layoutX="545.0" layoutY="12.0" mnemonicParsing="false" prefHeight="21.0"
+                                prefWidth="23.0" style="-fx-background-color: transparent;" text="X"
+                                textFill="WHITE" AnchorPane.rightAnchor="30.0"
+                                AnchorPane.topAnchor="12.0">
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </Button>
+                        <Button layoutX="515.0" layoutY="143.0" mnemonicParsing="false"
+                                style="-fx-background-color: #a0f583;" text="Update"
+                                AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="25.0"/>
+                        <Button layoutX="509.0" layoutY="100.0" mnemonicParsing="false"
+                                style="-fx-background-color: #92b2e5;" text="Compare"
+                                AnchorPane.bottomAnchor="44.0" AnchorPane.rightAnchor="23.0"/>
+                        <TextField disable="true" layoutX="382.0" layoutY="13.0" promptText="New Rank"
+                                   style="-fx-background-color: #616660;" visible="false"/>
+                        <Text disable="true" fill="WHITE" layoutX="310.0" layoutY="31.0"
+                              strokeType="OUTSIDE"
+                              strokeWidth="0.0" text="Rank:" visible="false"/>
+                        <Text disable="true" fill="WHITE" layoutX="307.0" layoutY="61.0"
+                              strokeType="OUTSIDE"
+                              strokeWidth="0.0" text="Name:" visible="false"/>
+                        <Text disable="true" fill="WHITE" layoutX="304.0" layoutY="92.0"
+                              strokeType="OUTSIDE"
+                              strokeWidth="0.0" text="Avg Mass:" visible="false"/>
+                        <Text disable="true" fill="WHITE" layoutX="304.0" layoutY="162.0"
+                              strokeType="OUTSIDE" strokeWidth="0.0" text="Max Mass:" visible="false"/>
+                        <Text disable="true" fill="WHITE" layoutX="302.0" layoutY="125.0"
+                              strokeType="OUTSIDE" strokeWidth="0.0" text="Avg Length:"
+                              visible="false"/>
+                        <TextField disable="true" layoutX="382.0" layoutY="44.0" promptText="New Name"
+                                   style="-fx-background-color: #616660;" visible="false"/>
+                        <TextField disable="true" layoutX="382.0" layoutY="75.0"
+                                   promptText="New Average Mass" style="-fx-background-color: #616660;"
+                                   visible="false"/>
+                        <TextField disable="true" layoutX="382.0" layoutY="108.0"
+                                   promptText="New Avg Length"
+                                   style="-fx-background-color: #616660;" visible="false"/>
+                        <TextField disable="true" layoutX="382.0" layoutY="144.0"
+                                   promptText="New Max Mass"
+                                   style="-fx-background-color: #616660;" visible="false"/>
+                        <Text disable="true" fill="#47d5a6" layoutX="228.0" layoutY="29.0"
+                              strokeType="OUTSIDE" strokeWidth="0.0" text="Item Updated Successfully"
+                              visible="false"/>
+                        <ImageView fx:id="imageData" fitHeight="150.0" fitWidth="200.0" layoutX="282.0"
+                                   layoutY="10.0" pickOnBounds="true" preserveRatio="true"/>
+                        <Button fx:id="uploadButton" layoutX="496.0" layoutY="67.0"
+                                mnemonicParsing="false"
+                                text="Upload Image"/>
+                    </AnchorPane>
+                </VBox>
+            </AnchorPane>
+        </Tab>
+        <Tab onSelectionChanged="#changeView" text="Fish">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="294.0" prefWidth="529.0"/>
+        </Tab>
+        <Tab onSelectionChanged="#changeView" text="Bird">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"/>
+        </Tab>
+    </TabPane>
 </AnchorPane>
