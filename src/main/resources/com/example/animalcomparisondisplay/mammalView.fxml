@@ -42,21 +42,12 @@
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                         </Button>
-                        <Button layoutX="515.0" layoutY="143.0" mnemonicParsing="false" onAction="#save" style="-fx-background-color: #a0f583;" text="Update" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="25.0" />
-                        <Button layoutX="509.0" layoutY="100.0" mnemonicParsing="false" style="-fx-background-color: #92b2e5;" text="Compare" AnchorPane.bottomAnchor="44.0" AnchorPane.rightAnchor="23.0" />
-                        <TextField disable="true" layoutX="382.0" layoutY="13.0" promptText="New Rank" style="-fx-background-color: #616660;" visible="false" />
-                        <Text disable="true" fill="WHITE" layoutX="310.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rank:" visible="false" />
-                        <Text disable="true" fill="WHITE" layoutX="307.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" visible="false" />
-                        <Text disable="true" fill="WHITE" layoutX="304.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avg Mass:" visible="false" />
-                        <Text disable="true" fill="WHITE" layoutX="304.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max Mass:" visible="false" />
-                        <Text disable="true" fill="WHITE" layoutX="302.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avg Length:" visible="false" />
-                        <TextField disable="true" layoutX="382.0" layoutY="44.0" promptText="New Name" style="-fx-background-color: #616660;" visible="false" />
-                        <TextField disable="true" layoutX="382.0" layoutY="75.0" promptText="New Average Mass" style="-fx-background-color: #616660;" visible="false" />
-                        <TextField disable="true" layoutX="382.0" layoutY="108.0" promptText="New Avg Length" style="-fx-background-color: #616660;" visible="false" />
-                        <TextField disable="true" layoutX="382.0" layoutY="144.0" promptText="New Max Mass" style="-fx-background-color: #616660;" visible="false" />
+                        <Button layoutX="514.0" layoutY="129.0" mnemonicParsing="false" onAction="#save" style="-fx-background-color: #a0f583;" text="Update" />
                         <Text disable="true" fill="#47d5a6" layoutX="228.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item Updated Successfully" visible="false" />
                         <ImageView fx:id="imageData" fitHeight="150.0" fitWidth="200.0" layoutX="282.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
                         <Button fx:id="uploadButton" layoutX="496.0" layoutY="67.0" mnemonicParsing="false" onAction="#uploadImage" text="Upload Image" />
+                  <Button fx:id="deleteButton" layoutX="516.0" layoutY="96.0" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: #e16f46;" text="Delete" />
+                  <Button layoutX="508.0" layoutY="38.0" mnemonicParsing="false" onAction="#add" text="Add Data" />
                     </AnchorPane>
                 </VBox>
             </AnchorPane>

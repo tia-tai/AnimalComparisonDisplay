@@ -4,13 +4,15 @@ import com.example.animalcomparisondisplay.Animals;
 import javafx.scene.image.Image;
 
 import java.io.File;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Mammal extends Animals {
+public class Mammal extends Animals implements Serializable {
+    private static final long serialVersionUID = 1L;
     private int avgMass;
-    private Image img;
+    transient private Image img;
     static ArrayList<Mammal> mammals = new ArrayList<Mammal>();
 
     public Mammal(int rank, String name, float length, int maxMass, int avgMass, Image img) {
@@ -66,5 +68,10 @@ public class Mammal extends Animals {
                 new Mammal(rank, name, length, maxMass, avgMass, imgFile);
             }
         }
+    }
+
+    public static void deleteMammalData(Mammal mammal) throws Exception {
+        mammals.remove(mammal);
+        System.out.println("removed");
     }
 }

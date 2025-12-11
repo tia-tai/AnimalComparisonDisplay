@@ -1,8 +1,10 @@
 package com.example.animalcomparisondisplay;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Animals {
+public class Animals implements Serializable {
+    private static final long serialVersionUID = 1L;
     private int rank;
     private String name;
     private float length;

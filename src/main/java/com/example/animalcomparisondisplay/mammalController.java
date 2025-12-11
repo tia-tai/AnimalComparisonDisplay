@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.Collections;
 import java.util.Objects;
 
 public class mammalController{
@@ -71,6 +72,29 @@ public class mammalController{
         }
     }
 
+    public void update() {
+        mammalDatatable.getItems().remove(0, Mammal.getMammals().toArray().length);
+        try {
+            int x = 0;
+
+            for (Mammal mammal : Mammal.getMammals()) {
+                mammalDatatable.getItems().add(mammal);
+                if (x==0) {
+                    mammalDatatable.getSelectionModel().select(mammal);
+                    x++;
+                }
+            }
+
+            rankTable.setCellValueFactory(new PropertyValueFactory<>("rank"));
+            nameTable.setCellValueFactory(new PropertyValueFactory<>("name"));
+            avgMassTable.setCellValueFactory(new PropertyValueFactory<>("avgMass"));
+            maxMassTable.setCellValueFactory(new PropertyValueFactory<>("maxMass"));
+            avgLengthTable.setCellValueFactory(new PropertyValueFactory<>("length"));
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
     public void displayData() throws FileNotFoundException {
         Mammal currentMammal = mammalDatatable.getSelectionModel().getSelectedItem();
         currentRank.setText(Integer.toOctalString(currentMammal.getRank()));
@@ -122,5 +146,23 @@ public class mammalController{
         currentMammal.setRank(Integer.parseInt(currentRank.getText()));
         currentMammal.setLength(Float.parseFloat(currentAvgLength.getText()));
         currentMammal.setImg(imageData.getImage());
+        update();
+    }
+
+    public void delete() throws Exception {
+        Mammal currentMammal = mammalDatatable.getSelectionModel().getSelectedItem();
+        Mammal.deleteMammalData(currentMammal);
+        update();
+    }
+
+    public void add() {
+        int avgMass = Integer.parseInt(currentAvgMass.getText());
+        int maxMass = Integer.parseInt(currentMaxMass.getText());
+        String name = currentName.getText();
+        int rank = Integer.parseInt(currentRank.getText());
+        float length = Float.parseFloat(currentAvgLength.getText());
+        Image image = imageData.getImage();
+        new Mammal(rank, name, length, maxMass, avgMass, image);
+        update();
     }
 }
