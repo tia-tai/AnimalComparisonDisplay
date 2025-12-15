@@ -1,6 +1,7 @@
 package com.example.animalcomparisondisplay;
 
 import com.example.animalcomparisondisplay.Animals;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
 
 import javax.imageio.ImageIO;
@@ -51,21 +52,24 @@ public class Mammal extends Animals implements Serializable {
     }
 
     public static void readMammalData() throws Exception {
-        File dataFile = new File("src/main/mammalData");
-        Scanner fileScanner = new Scanner(dataFile);
-        while (fileScanner.hasNextLine()) {
-            String data = fileScanner.nextLine();
-            String[] dataSegment = data.split("\t");
-            if (dataSegment[0].equals("Rank") || dataSegment[0].split(" ")[0].equals("in")) {
-                System.out.println("Line Skipped");
-            } else {
-                int rank = Integer.parseInt(dataSegment[0]);
-                String name = dataSegment[1].split("\\[")[0];
-                float length = Float.parseFloat(dataSegment[4].split("\\(")[1].split("\\)")[0]);
-                int maxMass = (int) Float.parseFloat(dataSegment[3].split("\\[")[0])*2205;
-                int avgMass = (int) Float.parseFloat(dataSegment[2].split("\\[")[0])*2205;
-                Image imgFile = null;
-                new Mammal(rank, name, length, maxMass, avgMass, imgFile);
+        restoreData();
+        if (Mammal.getMammals() == null) {
+            File dataFile = new File("src/main/mammalData");
+            Scanner fileScanner = new Scanner(dataFile);
+            while (fileScanner.hasNextLine()) {
+                String data = fileScanner.nextLine();
+                String[] dataSegment = data.split("\t");
+                if (dataSegment[0].equals("Rank") || dataSegment[0].split(" ")[0].equals("in")) {
+                    System.out.println("Line Skipped");
+                } else {
+                    int rank = Integer.parseInt(dataSegment[0]);
+                    String name = dataSegment[1].split("\\[")[0];
+                    float length = Float.parseFloat(dataSegment[4].split("\\(")[1].split("\\)")[0]);
+                    int maxMass = (int) Float.parseFloat(dataSegment[3].split("\\[")[0])*2205;
+                    int avgMass = (int) Float.parseFloat(dataSegment[2].split("\\[")[0])*2205;
+                    Image imgFile = null;
+                    new Mammal(rank, name, length, maxMass, avgMass, imgFile);
+                }
             }
         }
     }
@@ -98,5 +102,17 @@ public class Mammal extends Animals implements Serializable {
             ImageIO.write(SwingFXUtils.fromFXImage(img, null), "png", s);
         }
     }
+
+    @Serial
+    private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
+        s.defaultReadObject();
+        Image savedImage = null;
+        try {
+            savedImage = SwingFXUtils.toFXImage(ImageIO.read(s), null);
+        } catch (Exception ex) {
+        }
+        this.img = savedImage;
+    }
+
 
 }
