@@ -8,21 +8,22 @@
 
 <Pane prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.animalcomparisondisplay.FishController">
    <children>
-      <TextField fx:id="fishTitleText" layoutX="148.0" layoutY="22.0" />
-      <TextField fx:id="fishRank" layoutX="148.0" layoutY="150.0" />
-      <TextField fx:id="fishLength" layoutX="148.0" layoutY="192.0" />
-      <TextField fx:id="fishBinomialName" layoutX="148.0" layoutY="68.0" />
-      <TextField fx:id="fishTaxonomicClass" layoutX="148.0" layoutY="106.0" />
-      <ImageView fx:id="fishImages" fitHeight="402.0" fitWidth="340.0" layoutX="327.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="fishTitleText" layoutX="130.0" layoutY="22.0" onAction="#editAnimalName" onKeyPressed="#editAnimalName" onKeyTyped="#editAnimalName" prefHeight="26.0" prefWidth="170.0" />
+      <TextField fx:id="fishRank" layoutX="130.0" layoutY="150.0" onAction="#editRank" prefHeight="26.0" prefWidth="170.0" />
+      <TextField fx:id="fishLength" layoutX="130.0" layoutY="192.0" onAction="#editLength" prefHeight="26.0" prefWidth="170.0" />
+      <TextField fx:id="fishBinomialName" layoutX="130.0" layoutY="68.0" onAction="#editBinomialName" prefHeight="26.0" prefWidth="170.0" />
+      <TextField fx:id="fishTaxonomicClass" layoutX="130.0" layoutY="106.0" onAction="#editTaxonomicClass" prefHeight="26.0" prefWidth="170.0" />
+      <ImageView fx:id="fishImage" fitHeight="402.0" fitWidth="340.0" layoutX="327.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
       <Text layoutX="23.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Animal" wrappingWidth="45.0" />
       <Text layoutX="24.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Binomial Name" />
       <Text layoutX="24.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Taxonomic Class" />
       <Text layoutX="24.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rank" />
       <Text layoutX="24.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Length" />
       <Text layoutX="483.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image" />
-      <TextField fx:id="fishMass" layoutX="148.0" layoutY="236.0" />
+      <TextField fx:id="fishMass" layoutX="130.0" layoutY="236.0" onAction="#editMaxMass" prefHeight="26.0" prefWidth="170.0" />
       <Text layoutX="24.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mass" />
       <Button fx:id="nextImageLeft" layoutX="61.0" layoutY="357.0" minWidth="53.0" mnemonicParsing="false" onAction="#previousFish" prefHeight="39.0" prefWidth="53.0" text="&lt;" />
       <Button fx:id="nextImageRight" layoutX="185.0" layoutY="356.0" minWidth="53.0" mnemonicParsing="false" onAction="#nextFish" prefHeight="38.0" prefWidth="53.0" text="&gt;" />
+      <Button layoutX="450.0" layoutY="385.0" minWidth="53.0" mnemonicParsing="false" onAction="#addPicture" prefHeight="38.0" prefWidth="103.0" text="Add Image" />
    </children>
 </Pane>

@@ -1,16 +1,19 @@
 package com.example.animalcomparisondisplay;
 
+import javafx.scene.image.Image;
+
 import java.io.File;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Fish extends Animals {
+public class Fish extends Animals implements Serializable {
     //private String imageURL;
     private String binomialName;
     private String taxonomicClass;
     //private String comparisonURL;
+    transient private Image fishImage;
     static ArrayList<Fish> fishes = new ArrayList<Fish>();
-
 
     public Fish(int rank, String name, float length, int maxMass, String binomialName, String taxonomicClass) {
         super(rank, name, length, maxMass);
@@ -43,6 +46,14 @@ public class Fish extends Animals {
 
     public void setTaxonomicClass(String taxonomicClass) {
         this.taxonomicClass = taxonomicClass;
+    }
+
+    public Image getFishImage() {
+        return fishImage;
+    }
+
+    public void setFishImage(Image fishImage) {
+        this.fishImage = fishImage;
     }
 
     public String toString() {return getName() + " has a max mass of " + getMaxMass() + "lbs"; }
