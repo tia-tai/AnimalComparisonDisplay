@@ -54,6 +54,7 @@ public class Mammal extends Animals implements Serializable {
     public static void readMammalData() throws Exception {
         restoreData();
         if (Mammal.getMammals() == null) {
+            System.out.println("Here");
             File dataFile = new File("src/main/mammalData");
             Scanner fileScanner = new Scanner(dataFile);
             while (fileScanner.hasNextLine()) {
