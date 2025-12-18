@@ -71,6 +71,9 @@ public class mammalController{
 
             for (Mammal mammal : Mammal.getMammals()) {
                 mammalDatatable.getItems().add(mammal);
+                if (mammal.isFirstOn()) {
+                    currentItem = Mammal.getMammals().indexOf(mammal) + 1;
+                }
             }
 
             mammalDatatable.getSelectionModel().select(Mammal.getMammals().get(currentItem-1));
@@ -125,7 +128,10 @@ public class mammalController{
     }
 
     public void displayData() throws FileNotFoundException {
+        Mammal ogMammal = Mammal.getMammals().get(currentItem - 1);
+        ogMammal.setFirstOn(false);
         Mammal currentMammal = mammalDatatable.getSelectionModel().getSelectedItem();
+        currentMammal.setFirstOn(true);
         currentRank.setText(Integer.toOctalString(currentMammal.getRank()));
         currentName.setText(currentMammal.getName());
         currentAvgLength.setText(Float.toString(currentMammal.getLength()));
@@ -184,17 +190,21 @@ public class mammalController{
         Mammal currentMammal = mammalDatatable.getSelectionModel().getSelectedItem();
         Mammal.deleteMammalData(currentMammal);
         currentItem = 1;
+        Mammal newMammal = Mammal.getMammals().getFirst();
+        newMammal.setFirstOn(true);
         update();
     }
 
     public void add() {
+        Mammal ogMammal = Mammal.getMammals().get(currentItem - 1);
+        ogMammal.setFirstOn(false);
         int avgMass = Integer.parseInt(currentAvgMass.getText());
         int maxMass = Integer.parseInt(currentMaxMass.getText());
         String name = currentName.getText();
         int rank = Integer.parseInt(currentRank.getText());
         float length = Float.parseFloat(currentAvgLength.getText());
         Image image = imageData.getImage();
-        new Mammal(rank, name, length, maxMass, avgMass, image);
+        new Mammal(rank, name, length, maxMass, avgMass, image, true);
         currentItem = Mammal.getMammals().toArray().length;
         update();
     }

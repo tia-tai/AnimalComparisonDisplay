@@ -3,11 +3,14 @@ package com.example.animalcomparisondisplay;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.lang.classfile.Label;
 
 public class animalApplication extends Application {
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader mammalLoader = new FXMLLoader(animalApplication.class.getResource("mammalView.fxml"));

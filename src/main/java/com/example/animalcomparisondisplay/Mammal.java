@@ -16,10 +16,21 @@ public class Mammal extends Animals implements Serializable {
     transient private Image img;
     static ArrayList<Mammal> mammals = new ArrayList<Mammal>();
 
-    public Mammal(int rank, String name, float length, int maxMass, int avgMass, Image img) {
+    public boolean isFirstOn() {
+        return firstOn;
+    }
+
+    public void setFirstOn(boolean firstOn) {
+        this.firstOn = firstOn;
+    }
+
+    private boolean firstOn;
+
+    public Mammal(int rank, String name, float length, int maxMass, int avgMass, Image img, boolean firstOn) {
         super(rank, name, length, maxMass);
         this.avgMass = avgMass;
         this.img = img;
+        this.firstOn = firstOn;
         mammals.add(this);
     }
 
@@ -53,8 +64,7 @@ public class Mammal extends Animals implements Serializable {
 
     public static void readMammalData() throws Exception {
         restoreData();
-        if (Mammal.getMammals() == null) {
-            System.out.println("Here");
+        if (Mammal.getMammals().isEmpty()) {
             File dataFile = new File("src/main/mammalData");
             Scanner fileScanner = new Scanner(dataFile);
             while (fileScanner.hasNextLine()) {
@@ -69,7 +79,7 @@ public class Mammal extends Animals implements Serializable {
                     int maxMass = (int) Float.parseFloat(dataSegment[3].split("\\[")[0])*2205;
                     int avgMass = (int) Float.parseFloat(dataSegment[2].split("\\[")[0])*2205;
                     Image imgFile = null;
-                    new Mammal(rank, name, length, maxMass, avgMass, imgFile);
+                    new Mammal(rank, name, length, maxMass, avgMass, imgFile, false);
                 }
             }
         }
@@ -81,19 +91,23 @@ public class Mammal extends Animals implements Serializable {
     }
 
     static void saveData() throws Exception {
-        FileOutputStream fileOut = new FileOutputStream("src/main/mammalSaveData");
+        FileOutputStream fileOut = new FileOutputStream("src/main/mammalSavedData");
         ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
         objectOut.writeObject(Mammal.getMammals());
         objectOut.close();
         fileOut.close();
     }
 
-    static void restoreData() throws Exception {
-        FileInputStream fileIn = new FileInputStream("src/main/mammalSaveData");
-        ObjectInputStream objectIn = new ObjectInputStream(fileIn);
-        Mammal.setMammals((ArrayList<Mammal>)objectIn.readObject());
-        objectIn.close();
-        fileIn.close();
+    static void restoreData() {
+        try {
+            FileInputStream fileIn = new FileInputStream("src/main/mammalSavedData");
+            ObjectInputStream objectIn = new ObjectInputStream(fileIn);
+            Mammal.setMammals((ArrayList<Mammal>) objectIn.readObject());
+            objectIn.close();
+            fileIn.close();
+        } catch (Exception e) {
+
+        }
     }
 
     @Serial
